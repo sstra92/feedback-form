@@ -53,6 +53,7 @@
 
 
           p.id = patient.id;
+          p.mrn = patient.identifier;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -132,6 +133,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#pid').html(p.id)
+    $('#mrn').html(p.mrn)
   };
 
 })(window);
