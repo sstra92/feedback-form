@@ -37,16 +37,18 @@
       <div style="border-width: 2px; border: #1c1c1c">
         <h2>Feedback from</h2>
         <form id="feedback-form">
-           <input type = "radio" name = "feedback-type" value = "positive"> Positive Feedback </input>
-           <input type = "radio" name = "feedback-type" value = "disagree"> Disagree with Prediction </input>
-           <input type = "radio" name = "feedback-type" value = "general" checked> General Feedback </input>
-           <br />
-           <br />
-           Description : <br />
-           <textarea rows = "5" cols = "50" name = "feedback" style="text-align: left">
-              Enter feedback here, please
-           </textarea>
-          <input type="submit" value="Submit Feedback">
+          <div>
+            <input type = "radio" name = "feedback-type" value = "positive"> Positive Feedback </input>
+            <input type = "radio" name = "feedback-type" value = "disagree"> Disagree with Prediction </input>
+            <input type = "radio" name = "feedback-type" value = "general" checked> General Feedback </input>
+           </div>
+          <div>
+            <textarea rows = "5" cols = "50" name = "feedback" style="text-align: left" placeholder="Enter feedback here, please">
+            </textarea>
+          </div>
+          <div>
+            <input type="submit" value="Submit Feedback">
+          </div>
         </form>
       </div>
     </div>
