@@ -47,7 +47,7 @@
             </textarea>
           </div>
           <div style="margin-top: 5px; margin-bottom: 20px;">
-            <input type="submit" form="feedback-form" value="Submit Feedback">
+            <input id="feedback-submit" type="submit" form="feedback-form" value="Submit Feedback">
           </div>
         </form>
       </div>
@@ -82,6 +82,13 @@
           $('#errors').html('<p> Failed to call FHIR Service </p>');
         }
       );
+    </script>
+    <script type="text/javascript">
+      $(function(){
+          $('#feedback-submit').click(function(){
+              alert("Your feedback was submitted.")
+          });
+      });
     </script>
   </body>
 </html>
