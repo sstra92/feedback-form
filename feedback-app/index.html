@@ -25,6 +25,10 @@
       <h2>Patient Data</h2>
       <table>
         <tr>
+          <th>Patient ID:</th>
+          <td id='pid'></td>
+        </tr>
+        <tr>
           <th>First Name:</th>
           <td id='fname'></td>
         </tr>
@@ -86,7 +90,16 @@
     <script type="text/javascript">
       $(function(){
           $('#feedback-submit').click(function(){
-              $.get('https://192.168.31.110:5000/' + $('#feedback-form').serialize())
+              var data = {
+                first_name: $('#fname').text(),
+                last_name: $('#lname').text(),
+                pid: $('#pid').text(),
+                feedback_type: $('input:checked').val(),
+                feedback: $('#feedback-input').val()
+              }
+              // $.post('http://192.168.31.110:5000/', $('#feedback-form').serialize())
+              // $.post('http://192.168.31.110:5000/', data)
+              alert(JSON.stringify(data))
               alert("Your feedback was submitted.")
           });
       });
