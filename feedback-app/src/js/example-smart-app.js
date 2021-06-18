@@ -11,7 +11,6 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        console.log(pt)
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -53,7 +52,7 @@
 
 
           p.id = patient.id;
-          p.mrn = patient.identifier;
+          p.identifier = patient.identifier;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -89,7 +88,8 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      mrn: {value: ''}
+      pid: {value: ''},
+      identifier: {value: ''}
     };
   }
 
@@ -134,7 +134,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#pid').html(p.id)
-    $('#mrn').html(p.mrn)
+    $('#identifier').html(p.identifier)
   };
 
 })(window);
