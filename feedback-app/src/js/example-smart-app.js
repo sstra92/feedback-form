@@ -21,10 +21,11 @@
         var practitioner = smart.practitioner;
         var pract = practitioner.read();
         $.when(pract).fail(onError);
-        $.when(pract).done(function(patient) {
+        $.when(pract).done(function(practitioner) {
           var pr = defaultPractitioner();
-          pr.id = pract.id;
-          // p.identifier = patient.identifier;
+          pr.id = practitioner.id;
+          pr.identifier = practitioner.identifier;
+          pr.name = practitioner.name;
           ret.resolve(pr);
         });
       } else {
@@ -46,7 +47,9 @@
 
   function defaultPractitioner(){
     return {
-      id: {value: ''}
+      id: {value: ''},
+      identifier: {value: ''},
+      name: {value: ''}
     }
   }
 
@@ -56,6 +59,8 @@
     $('#patient-id').html(p.id)
     $('#identifier').html(p.identifier)
     $('#practitioner-id').html(pr.id)
+    $('#practitioner-identifier').html(pr.identifier)
+    $('#practitioner-name').html(pr.name)
   };
 
 })(window);
