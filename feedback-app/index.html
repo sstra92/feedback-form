@@ -98,15 +98,14 @@
     <script type="text/javascript">
       $(function(){
           $('#feedback-submit').click(function(){
-              var data = {
-                first_name: $('#fname').text(),
-                last_name: $('#lname').text(),
-                pid: $('#pid').text(),
+              let data = {
+                pid: $('#patient-id').text(),
                 feedback_type: $('input:checked').val(),
                 feedback: $('#feedback-input').val()
               }
               // $.post('http://192.168.31.110:5000/', $('#feedback-form').serialize())
               // $.post('http://192.168.31.110:5000/', data)
+              alert(JSON.stringify(window.sessionStorage))
               alert(JSON.stringify(data))
               alert("Your feedback was submitted.")
           });
