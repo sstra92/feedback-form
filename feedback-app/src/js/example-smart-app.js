@@ -53,8 +53,9 @@
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
-    $('#pid').html(p.id)
+    $('#patient-id').html(p.id)
     $('#identifier').html(p.identifier)
+    $('#practitioner-id').html(pr.id)
   };
 
 })(window);
