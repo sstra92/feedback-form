@@ -17,6 +17,16 @@
           p.identifier = patient.identifier;
           ret.resolve(p);
         });
+      } else if (smart.hasOwnProperty('practitioner')) {
+        var practitioner = smart.practitioner;
+        var pract = practitioner.read();
+        $.when(pract).fail(onError);
+        $.when(pract).done(function(patient) {
+          var pr = defaultPractitioner();
+          pr.id = pract.id;
+          // p.identifier = patient.identifier;
+          ret.resolve(pr);
+        });
       } else {
         onError();
       }
@@ -32,6 +42,12 @@
       pid: {value: ''},
       identifier: {value: ''}
     };
+  }
+
+  function defaultPractitioner(){
+    return {
+      id: {value: ''}
+    }
   }
 
   window.drawVisualization = function(p) {
